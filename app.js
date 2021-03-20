@@ -9,6 +9,7 @@ console.log(path.join(__dirname,'./public'));
 const publicDirectory = path.join(__dirname,'./public');
 const viewpath = path.join(__dirname,'./templates/view');
 const partialpath = path.join(__dirname,'./templates/partials');
+const port = process.env.PORT || 8080;
 hbs.registerPartials(partialpath);
 
 app.set('view engine','hbs');
@@ -45,6 +46,6 @@ app.get("/about/*", (req,res) => {
 //   res.send('404 not found')
 // });
 
-app.listen(8080, () => {
-    console.log("Server is running on 8080");
+app.listen(port, () => {
+    console.log("Server is running on "+port);
 });
